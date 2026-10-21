@@ -1,0 +1,52 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://ludograph.local/schemas/knowledge-graph-input-1.0.json",
+  "title": "LudoGraph Knowledge Graph Input",
+  "type": "object",
+  "required": ["schema_version", "graph"],
+  "properties": {
+    "schema_version": {"const": "knowledge-graph-1.0"},
+    "graph": {
+      "type": "object",
+      "required": ["graph_type", "nodes", "edges"],
+      "properties": {
+        "id": {"type": "string"},
+        "name": {"type": "string"},
+        "graph_type": {
+          "type": "string",
+          "enum": ["local", "path", "cycle", "tree", "forest", "dag", "general", "multi_graph"]
+        },
+        "nodes": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["id", "type", "label"],
+            "properties": {
+              "id": {"type": "string"},
+              "type": {"type": "string"},
+              "label": {"type": "string"},
+              "description": {"type": "string"},
+              "evidence": {"type": "array", "items": {"type": "string"}}
+            }
+          }
+        },
+        "edges": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["from", "to", "relation"],
+            "properties": {
+              "id": {"type": "string"},
+              "from": {"type": "string"},
+              "to": {"type": "string"},
+              "relation": {"type": "string"},
+              "label": {"type": "string"},
+              "conditions": {"type": "array"}
+            }
+          }
+        }
+      }
+    },
+    "verification_targets": {"type": "array"}
+  }
+}

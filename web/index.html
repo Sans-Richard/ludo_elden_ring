@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>LudoGraph Quest Lab</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="brand-mark">L</div>
+        <div>
+          <strong>LudoGraph</strong>
+          <span>QUEST LAB / MVP</span>
+        </div>
+      </div>
+      <nav>
+        <a class="nav-item active" href="#overview"><span>◈</span>验证总览</a>
+        <a class="nav-item" href="#knowledge"><span>✦</span>知识图谱</a>
+      </nav>
+      <div class="sidebar-footer">
+        <span class="status-dot"></span>
+        <span>本地验证环境</span>
+        <small>FSM · bounded BFS</small>
+      </div>
+    </aside>
+
+    <main class="main-content">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">NARRATIVE SYSTEMS / FORMAL VERIFICATION</p>
+          <h1>任务剧情验证工作台</h1>
+        </div>
+        <div class="top-actions">
+          <label class="upload-button">
+            <input id="file-input" type="file" accept=".json,application/json">
+            导入知识图谱 JSON
+          </label>
+          <button id="reload-button" class="ghost-button">重新加载图谱</button>
+        </div>
+      </header>
+
+      <section id="overview" class="hero-card">
+        <div>
+          <span class="tag">ELDEN RING / DEMO DATASET</span>
+          <h2>在剧情断裂之前，<em>找到那一步。</em></h2>
+          <p>把任务阶段、世界变量与玩家行为编译成有限状态空间，追踪不可达目标、跨任务干扰与悬空状态。</p>
+        </div>
+        <div class="hero-sigil">◒</div>
+      </section>
+
+      <div id="error-banner" class="error-banner hidden"></div>
+      <div id="input-format" class="input-format hidden"></div>
+
+      <section class="stats-grid">
+        <article class="stat-card"><span>任务线</span><strong id="quest-count">—</strong><small>Quest definitions</small></article>
+        <article class="stat-card"><span>世界变量</span><strong id="variable-count">—</strong><small>State variables</small></article>
+        <article class="stat-card"><span>证据记录</span><strong id="evidence-count">—</strong><small>Evidence nodes</small></article>
+        <article class="stat-card accent"><span>验证结果</span><strong id="result-label">—</strong><small id="result-detail">等待运行</small></article>
+      </section>
+
+      <section id="quests" class="workspace-grid">
+        <article class="panel quest-panel">
+          <div class="panel-heading">
+            <div><span class="section-kicker">01 / QUEST SELECTOR</span><h3>选择任务线</h3></div>
+            <span id="game-version" class="muted">—</span>
+          </div>
+          <div id="quest-list" class="quest-list"></div>
+        </article>
+
+        <article class="panel verify-panel">
+          <div class="panel-heading">
+            <div><span class="section-kicker">02 / VERIFICATION RUN</span><h3>验证配置</h3></div>
+            <span class="engine-badge">● ENGINE READY</span>
+          </div>
+          <div class="field">
+            <label for="target-state">目标状态</label>
+            <select id="target-state">
+              <option>COMPLETED</option>
+              <option>ACTIVE</option>
+              <option>FAILED</option>
+              <option>ABANDONED</option>
+            </select>
+          </div>
+          <div class="bounds">
+            <label>搜索深度 <input id="depth-bound" type="number" min="1" value="100"></label>
+            <label>状态上限 <input id="state-bound" type="number" min="1" value="10000"></label>
+          </div>
+          <button id="verify-button" class="primary-button">运行形式化验证 <span>→</span></button>
+          <p class="helper">验证器使用 BFS 遍历知识图谱编译出的任务状态和行为关系。unknown 不会被视为通过。</p>
+        </article>
+      </section>
+
+      <section class="results-layout">
+        <article class="panel result-panel">
+          <div class="panel-heading">
+            <div><span class="section-kicker">03 / VERIFICATION OUTPUT</span><h3>验证结果</h3></div>
+            <span id="result-chip" class="result-chip">尚未运行</span>
+          </div>
+          <div id="result-summary" class="result-summary empty-state">选择任务并运行验证</div>
+          <div id="path-container" class="path-container"></div>
+        </article>
+
+        <article id="evidence" class="panel evidence-panel">
+          <div class="panel-heading">
+            <div><span class="section-kicker">04 / PROVENANCE</span><h3>证据链</h3></div>
+          </div>
+          <div id="evidence-list" class="evidence-list"></div>
+        </article>
+      </section>
+
+      <section id="graph" class="panel graph-panel">
+        <div class="panel-heading">
+          <div><span class="section-kicker">05 / ATOMIC STATEMENT GRAPH</span><h3>原子语句关系图</h3></div>
+          <span class="muted">动作 · 条件 · 状态 · 证据</span>
+        </div>
+        <p class="graph-intro">节点表示知识图谱中的任务、状态转换、状态变量和玩家行为。红色连线表示该行为会破坏任务前置条件。</p>
+        <div id="graph-container" class="graph-container"></div>
+        <div id="graph-legend" class="graph-legend"></div>
+      </section>
+
+      <section id="knowledge" class="knowledge-workspace">
+        <aside class="knowledge-sidebar">
+          <div class="knowledge-sidebar-title">图谱渲染器 <span id="knowledge-count">—</span></div>
+          <label>布局算法
+            <select id="knowledge-layout">
+              <option value="force">force · 力导向</option>
+              <option value="radial">radial · 按类型分层</option>
+              <option value="grid">grid · 网格</option>
+            </select>
+          </label>
+          <label>节点类型
+            <select id="knowledge-type">
+              <option value="all">全部</option>
+              <option value="entity">角色 / 道具</option>
+              <option value="quest">任务</option>
+              <option value="action">动作</option>
+              <option value="evidence">证据</option>
+            </select>
+          </label>
+          <label>搜索
+            <input id="knowledge-search" type="search" placeholder="名称或 ID">
+          </label>
+          <div class="knowledge-buttons">
+            <button id="knowledge-fit" type="button">适应视图</button>
+            <button id="knowledge-reset" type="button">重置布局</button>
+          </div>
+          <label class="knowledge-check"><input id="knowledge-node-labels" type="checkbox" checked> 节点标签</label>
+          <label class="knowledge-check"><input id="knowledge-edge-labels" type="checkbox" checked> 关系标签</label>
+          <div id="knowledge-legend" class="knowledge-legend"></div>
+        </aside>
+        <div class="knowledge-canvas">
+          <div class="knowledge-description">节点、关系与证据构成的有向知识网络</div>
+          <div id="knowledge-graph-container" class="knowledge-graph-container"></div>
+          <aside id="knowledge-details" class="knowledge-details empty-state">点击图谱中的节点查看详情</aside>
+        </div>
+      </section>
+
+      <section id="model" class="panel model-panel">
+        <div class="panel-heading">
+          <div><span class="section-kicker">07 / MODEL HEALTH</span><h3>模型概况</h3></div>
+          <span class="muted">schema <b id="schema-version">—</b></span>
+        </div>
+        <div class="model-health">
+          <div><span>实体</span><strong id="entity-count">—</strong></div>
+          <div><span>动作</span><strong id="action-count">—</strong></div>
+          <div><span>转换</span><strong id="transition-count">—</strong></div>
+          <div><span>未决问题</span><strong id="open-question-count">—</strong></div>
+        </div>
+      </section>
+      <footer>证据受限的知识图谱验证 Demo · 结论仅对当前图谱、证据与搜索边界负责</footer>
+    </main>
+  </div>
+  <script src="./app.js"></script>
+</body>
+</html>

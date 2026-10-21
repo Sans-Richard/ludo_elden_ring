@@ -1,0 +1,1494 @@
+{
+  "schema_version": "knowledge-graph-1.0",
+  "graph": {
+    "id": "elden-ring-quest-graph",
+    "name": "艾尔登法环任务知识图谱",
+    "graph_type": "multi_graph",
+    "nodes": [
+      {
+        "id": "npc_ranni",
+        "type": "character",
+        "label": "菈妮",
+        "description": "游戏实体",
+        "evidence": [
+          "xhe-001",
+          "xhe-002",
+          "xhe-004"
+        ]
+      },
+      {
+        "id": "npc_seluv_is",
+        "type": "character",
+        "label": "赛尔维斯",
+        "description": "游戏实体",
+        "evidence": [
+          "xhe-001",
+          "xhe-003"
+        ]
+      },
+      {
+        "id": "npc_blaidd",
+        "type": "character",
+        "label": "布莱泽",
+        "description": "游戏实体",
+        "evidence": [
+          "xhe-004"
+        ]
+      },
+      {
+        "id": "npc_millicent",
+        "type": "character",
+        "label": "米莉森",
+        "description": "游戏实体",
+        "evidence": [
+          "xhe-005"
+        ]
+      },
+      {
+        "id": "npc_fia",
+        "type": "character",
+        "label": "菲雅",
+        "description": "游戏实体",
+        "evidence": [
+          "xhe-006"
+        ]
+      },
+      {
+        "id": "npc_d",
+        "type": "character",
+        "label": "D",
+        "description": "游戏实体",
+        "evidence": [
+          "xhe-006"
+        ]
+      },
+      {
+        "id": "npc_d_brother",
+        "type": "character",
+        "label": "D 的弟弟",
+        "description": "游戏实体",
+        "evidence": [
+          "xhe-006"
+        ]
+      },
+      {
+        "id": "item_fingerslayer_blade",
+        "type": "item",
+        "label": "猎杀指头刀",
+        "description": "游戏实体",
+        "evidence": [
+          "xhe-001"
+        ]
+      },
+      {
+        "id": "item_amber_starlight",
+        "type": "item",
+        "label": "琥珀星光",
+        "description": "游戏实体",
+        "evidence": [
+          "xhe-002"
+        ]
+      },
+      {
+        "id": "item_clean_golden_needle",
+        "type": "item",
+        "label": "纯净金针",
+        "description": "游戏实体",
+        "evidence": [
+          "xhe-005"
+        ]
+      },
+      {
+        "id": "item_miquella_needle",
+        "type": "item",
+        "label": "米凯拉的针",
+        "description": "游戏实体",
+        "evidence": [
+          "xhe-005"
+        ]
+      },
+      {
+        "id": "item_twinned_armor",
+        "type": "item",
+        "label": "孪生套",
+        "description": "游戏实体",
+        "evidence": [
+          "xhe-006"
+        ]
+      },
+      {
+        "id": "quest_ranni_xhe",
+        "type": "quest",
+        "label": "菈妮——邂逅菈妮",
+        "description": "初始状态：AVAILABLE",
+        "initial_state": "AVAILABLE",
+        "terminal_states": [
+          "COMPLETED",
+          "FAILED"
+        ],
+        "evidence": [
+          "xhe-004"
+        ]
+      },
+      {
+        "id": "quest_seluv_is_xhe",
+        "type": "quest",
+        "label": "赛尔维斯支线",
+        "description": "初始状态：AVAILABLE",
+        "initial_state": "AVAILABLE",
+        "terminal_states": [
+          "COMPLETED",
+          "FAILED"
+        ],
+        "evidence": [
+          "xhe-001",
+          "xhe-002"
+        ]
+      },
+      {
+        "id": "quest_millicent_xhe",
+        "type": "quest",
+        "label": "米莉森的命运",
+        "description": "初始状态：AVAILABLE",
+        "initial_state": "AVAILABLE",
+        "terminal_states": [
+          "COMPLETED",
+          "FAILED"
+        ],
+        "evidence": [
+          "xhe-005"
+        ]
+      },
+      {
+        "id": "quest_fia_d_xhe",
+        "type": "quest",
+        "label": "狩猎死亡——D / 菲雅",
+        "description": "初始状态：AVAILABLE",
+        "initial_state": "AVAILABLE",
+        "terminal_states": [
+          "COMPLETED",
+          "FAILED"
+        ],
+        "evidence": [
+          "xhe-006"
+        ]
+      },
+      {
+        "id": "quest_seluv_is_potion_xhe",
+        "type": "quest",
+        "label": "赛尔维斯药水的去向",
+        "description": "初始状态：AVAILABLE",
+        "initial_state": "AVAILABLE",
+        "terminal_states": [
+          "COMPLETED",
+          "FAILED"
+        ],
+        "evidence": [
+          "xhe-003"
+        ]
+      },
+      {
+        "id": "quest_ranni_amber_xhe",
+        "type": "quest",
+        "label": "菈妮与琥珀色药水",
+        "description": "初始状态：AVAILABLE",
+        "initial_state": "AVAILABLE",
+        "terminal_states": [
+          "COMPLETED",
+          "FAILED"
+        ],
+        "evidence": [
+          "xhe-002"
+        ]
+      },
+      {
+        "id": "quest_millicent_choice_xhe",
+        "type": "quest",
+        "label": "米莉森：帮助还是杀害",
+        "description": "初始状态：AVAILABLE",
+        "initial_state": "AVAILABLE",
+        "terminal_states": [
+          "COMPLETED",
+          "FAILED"
+        ],
+        "evidence": [
+          "xhe-005"
+        ]
+      },
+      {
+        "id": "action_give_fingerslayer_blade",
+        "type": "action",
+        "label": "give_item",
+        "description": "执行者：player",
+        "actor": "player",
+        "irreversible": true,
+        "evidence": [
+          "xhe-001"
+        ]
+      },
+      {
+        "id": "action_complete_seluv_is",
+        "type": "action",
+        "label": "complete_quest",
+        "description": "执行者：player",
+        "actor": "player",
+        "irreversible": false,
+        "evidence": [
+          "xhe-001"
+        ]
+      },
+      {
+        "id": "action_partner_ranni",
+        "type": "action",
+        "label": "trigger_ending",
+        "description": "执行者：player",
+        "actor": "player",
+        "irreversible": true,
+        "evidence": [
+          "xhe-004"
+        ]
+      },
+      {
+        "id": "action_help_millicent",
+        "type": "action",
+        "label": "help_branch",
+        "description": "执行者：player",
+        "actor": "player",
+        "irreversible": true,
+        "evidence": [
+          "xhe-005"
+        ]
+      },
+      {
+        "id": "action_kill_millicent",
+        "type": "action",
+        "label": "kill_branch",
+        "description": "执行者：player",
+        "actor": "player",
+        "irreversible": true,
+        "evidence": [
+          "xhe-005"
+        ]
+      },
+      {
+        "id": "action_give_twinned_set",
+        "type": "action",
+        "label": "give_item",
+        "description": "执行者：player",
+        "actor": "player",
+        "irreversible": true,
+        "evidence": [
+          "xhe-006"
+        ]
+      },
+      {
+        "id": "action_leave_fia",
+        "type": "action",
+        "label": "skip_branch",
+        "description": "执行者：player",
+        "actor": "player",
+        "irreversible": false,
+        "evidence": [
+          "xhe-006"
+        ]
+      },
+      {
+        "id": "action_give_seluv_is_potion_to_jar",
+        "type": "action",
+        "label": "give_potion_to_other_recipient",
+        "description": "执行者：player",
+        "actor": "player",
+        "irreversible": true,
+        "evidence": [
+          "xhe-003"
+        ]
+      },
+      {
+        "id": "action_give_amber_potion_to_ranni",
+        "type": "action",
+        "label": "give_potion_to_ranni",
+        "description": "执行者：player",
+        "actor": "player",
+        "irreversible": true,
+        "evidence": [
+          "xhe-002"
+        ]
+      },
+      {
+        "id": "action_help_millicent_final",
+        "type": "action",
+        "label": "help_millicent",
+        "description": "执行者：player",
+        "actor": "player",
+        "irreversible": true,
+        "evidence": [
+          "xhe-005"
+        ]
+      },
+      {
+        "id": "action_kill_millicent_final",
+        "type": "action",
+        "label": "kill_millicent",
+        "description": "执行者：player",
+        "actor": "player",
+        "irreversible": true,
+        "evidence": [
+          "xhe-005"
+        ]
+      },
+      {
+        "id": "xhe-001",
+        "type": "evidence",
+        "label": "xhe-001",
+        "description": "猎杀指头刀交给菈妮后，赛尔维斯死亡，赛尔维斯支线失去继续推进条件。",
+        "certainty": "explicit",
+        "assessment": "accepted",
+        "source_id": "source-101"
+      },
+      {
+        "id": "xhe-002",
+        "type": "evidence",
+        "label": "xhe-002",
+        "description": "琥珀色药水交给菈妮会使菈妮支线中断。",
+        "certainty": "explicit",
+        "assessment": "accepted",
+        "source_id": "source-101"
+      },
+      {
+        "id": "xhe-003",
+        "type": "evidence",
+        "label": "xhe-003",
+        "description": "赛尔维斯药水可以交给涅斐丽、食粪者或交给百智爵士。",
+        "certainty": "explicit",
+        "assessment": "accepted",
+        "source_id": "source-101"
+      },
+      {
+        "id": "xhe-004",
+        "type": "evidence",
+        "label": "xhe-004",
+        "description": "菈妮线从书斋基座后进入娇小菈妮、灾厄影子、暗月戒指和艾丝缇等阶段，并以与菈妮结成伴侣完成。",
+        "certainty": "explicit",
+        "assessment": "accepted",
+        "source_id": "source-102"
+      },
+      {
+        "id": "xhe-005",
+        "type": "evidence",
+        "label": "xhe-005",
+        "description": "米莉森末段有帮助米莉森和杀害米莉森两个分支；帮助路线可继续取得米凯拉的针，杀害路线无法获得金针。",
+        "certainty": "explicit",
+        "assessment": "accepted",
+        "source_id": "source-103"
+      },
+      {
+        "id": "xhe-006",
+        "type": "evidence",
+        "label": "xhe-006",
+        "description": "菲雅杀害 D；交付孪生套给 D 的弟弟会触发菲雅被杀害，不交付则菲雅不被杀害。",
+        "certainty": "explicit",
+        "assessment": "accepted",
+        "source_id": "source-104"
+      },
+      {
+        "id": "source-101",
+        "type": "source",
+        "label": "赛尔维斯支线",
+        "description": "提要；全流程第 1、7、8 步",
+        "url": "https://api.xiaoheihe.cn/wiki/get_article_for_app/?article_id=9796846&wiki_id=1245620"
+      },
+      {
+        "id": "source-102",
+        "type": "source",
+        "label": "“月之伴侣”菈妮——邂逅菈妮",
+        "description": "提要；全流程第 1-10 步",
+        "url": "https://api.xiaoheihe.cn/wiki/get_article_for_app/?article_id=9785073&wiki_id=1245620"
+      },
+      {
+        "id": "source-103",
+        "type": "source",
+        "label": "米莉森的命运",
+        "description": "前置要求；全流程第 18 步分支",
+        "url": "https://api.xiaoheihe.cn/wiki/get_article_for_app/?article_id=9791353&wiki_id=1245620"
+      },
+      {
+        "id": "source-104",
+        "type": "source",
+        "label": "狩猎死亡——D",
+        "description": "前置要求；全流程第 2-8 步分支",
+        "url": "https://api.xiaoheihe.cn/wiki/get_article_for_app/?article_id=9787660&wiki_id=1245620"
+      },
+      {
+        "id": "ranni_partnered",
+        "type": "state",
+        "label": "ranni_partnered",
+        "description": "初始值：False；可逆性：irreversible",
+        "initial": false,
+        "reversibility": "irreversible",
+        "evidence": [
+          "xhe-004"
+        ]
+      },
+      {
+        "id": "fingerslayer_blade_given",
+        "type": "state",
+        "label": "fingerslayer_blade_given",
+        "description": "初始值：False；可逆性：irreversible",
+        "initial": false,
+        "reversibility": "irreversible",
+        "evidence": [
+          "xhe-001"
+        ]
+      },
+      {
+        "id": "seluv_is_alive",
+        "type": "state",
+        "label": "seluv_is_alive",
+        "description": "初始值：True；可逆性：irreversible",
+        "initial": true,
+        "reversibility": "irreversible",
+        "evidence": [
+          "xhe-001"
+        ]
+      },
+      {
+        "id": "seluv_is_work_done",
+        "type": "state",
+        "label": "seluv_is_work_done",
+        "description": "初始值：False；可逆性：unknown",
+        "initial": false,
+        "reversibility": "unknown",
+        "evidence": [
+          "xhe-001"
+        ]
+      },
+      {
+        "id": "miquella_needle_obtained",
+        "type": "state",
+        "label": "miquella_needle_obtained",
+        "description": "初始值：False；可逆性：irreversible",
+        "initial": false,
+        "reversibility": "irreversible",
+        "evidence": [
+          "xhe-005"
+        ]
+      },
+      {
+        "id": "fia_alive",
+        "type": "state",
+        "label": "fia_alive",
+        "description": "初始值：True；可逆性：irreversible",
+        "initial": true,
+        "reversibility": "irreversible",
+        "evidence": [
+          "xhe-006"
+        ]
+      },
+      {
+        "id": "seluv_is_potion_delivered_safely",
+        "type": "state",
+        "label": "seluv_is_potion_delivered_safely",
+        "description": "初始值：False；可逆性：irreversible",
+        "initial": false,
+        "reversibility": "irreversible",
+        "evidence": [
+          "xhe-003"
+        ]
+      },
+      {
+        "id": "ranni_given_amber_potion",
+        "type": "state",
+        "label": "ranni_given_amber_potion",
+        "description": "初始值：False；可逆性：irreversible",
+        "initial": false,
+        "reversibility": "irreversible",
+        "evidence": [
+          "xhe-002"
+        ]
+      },
+      {
+        "id": "millicent_helped",
+        "type": "state",
+        "label": "millicent_helped",
+        "description": "初始值：False；可逆性：irreversible",
+        "initial": false,
+        "reversibility": "irreversible",
+        "evidence": [
+          "xhe-005"
+        ]
+      },
+      {
+        "id": "millicent_killed",
+        "type": "state",
+        "label": "millicent_killed",
+        "description": "初始值：False；可逆性：irreversible",
+        "initial": false,
+        "reversibility": "irreversible",
+        "evidence": [
+          "xhe-005"
+        ]
+      },
+      {
+        "id": "transition_ranni_complete",
+        "type": "transition",
+        "label": "AVAILABLE → COMPLETED",
+        "description": "任务状态转换：quest_ranni_xhe",
+        "evidence": [
+          "xhe-004"
+        ]
+      },
+      {
+        "id": "transition_seluv_is_complete",
+        "type": "transition",
+        "label": "AVAILABLE → COMPLETED",
+        "description": "任务状态转换：quest_seluv_is_xhe",
+        "evidence": [
+          "xhe-001"
+        ]
+      },
+      {
+        "id": "transition_ranni_kills_seluv_is",
+        "type": "transition",
+        "label": "AVAILABLE → FAILED",
+        "description": "任务状态转换：quest_seluv_is_xhe",
+        "evidence": [
+          "xhe-001"
+        ]
+      },
+      {
+        "id": "transition_millicent_help_complete",
+        "type": "transition",
+        "label": "AVAILABLE → COMPLETED",
+        "description": "任务状态转换：quest_millicent_xhe",
+        "evidence": [
+          "xhe-005"
+        ]
+      },
+      {
+        "id": "transition_fia_complete",
+        "type": "transition",
+        "label": "AVAILABLE → COMPLETED",
+        "description": "任务状态转换：quest_fia_d_xhe",
+        "evidence": [
+          "xhe-006"
+        ]
+      },
+      {
+        "id": "transition_seluv_is_potion_safe",
+        "type": "transition",
+        "label": "AVAILABLE → COMPLETED",
+        "description": "任务状态转换：quest_seluv_is_potion_xhe",
+        "evidence": [
+          "xhe-003"
+        ]
+      },
+      {
+        "id": "transition_seluv_is_potion_failed",
+        "type": "transition",
+        "label": "AVAILABLE → FAILED",
+        "description": "任务状态转换：quest_seluv_is_potion_xhe",
+        "evidence": [
+          "xhe-002"
+        ]
+      },
+      {
+        "id": "transition_ranni_amber_safe",
+        "type": "transition",
+        "label": "AVAILABLE → COMPLETED",
+        "description": "任务状态转换：quest_ranni_amber_xhe",
+        "evidence": [
+          "xhe-002"
+        ]
+      },
+      {
+        "id": "transition_ranni_amber_failed",
+        "type": "transition",
+        "label": "AVAILABLE → FAILED",
+        "description": "任务状态转换：quest_ranni_amber_xhe",
+        "evidence": [
+          "xhe-002"
+        ]
+      },
+      {
+        "id": "transition_millicent_help",
+        "type": "transition",
+        "label": "AVAILABLE → COMPLETED",
+        "description": "任务状态转换：quest_millicent_choice_xhe",
+        "evidence": [
+          "xhe-005"
+        ]
+      },
+      {
+        "id": "transition_millicent_kill",
+        "type": "transition",
+        "label": "AVAILABLE → FAILED",
+        "description": "任务状态转换：quest_millicent_choice_xhe",
+        "evidence": [
+          "xhe-005"
+        ]
+      },
+      {
+        "id": "objective_ranni_complete",
+        "type": "objective",
+        "label": "objective_ranni_complete",
+        "description": "目标：stage_ranni_completed",
+        "evidence": [
+          "xhe-004"
+        ]
+      },
+      {
+        "id": "objective_seluv_is_complete",
+        "type": "objective",
+        "label": "objective_seluv_is_complete",
+        "description": "目标：stage_seluv_is_active",
+        "evidence": [
+          "xhe-001"
+        ]
+      },
+      {
+        "id": "objective_millicent_needle",
+        "type": "objective",
+        "label": "objective_millicent_needle",
+        "description": "目标：stage_millicent_choice",
+        "evidence": [
+          "xhe-005"
+        ]
+      },
+      {
+        "id": "objective_seluv_is_potion_complete",
+        "type": "objective",
+        "label": "objective_seluv_is_potion_complete",
+        "description": "目标：stage_seluv_is_potion_choice",
+        "evidence": [
+          "xhe-003"
+        ]
+      },
+      {
+        "id": "objective_millicent_help",
+        "type": "objective",
+        "label": "objective_millicent_help",
+        "description": "目标：stage_millicent_final_choice",
+        "evidence": [
+          "xhe-005"
+        ]
+      }
+    ],
+    "edges": [
+      {
+        "id": "edge_0001",
+        "from": "action_give_fingerslayer_blade",
+        "to": "npc_ranni",
+        "relation": "affects",
+        "label": "动作影响实体",
+        "evidence": [
+          "xhe-001"
+        ]
+      },
+      {
+        "id": "edge_0002",
+        "from": "action_give_fingerslayer_blade",
+        "to": "npc_seluv_is",
+        "relation": "affects",
+        "label": "动作影响实体",
+        "evidence": [
+          "xhe-001"
+        ]
+      },
+      {
+        "id": "edge_0003",
+        "from": "action_give_fingerslayer_blade",
+        "to": "item_fingerslayer_blade",
+        "relation": "affects",
+        "label": "动作影响实体",
+        "evidence": [
+          "xhe-001"
+        ]
+      },
+      {
+        "id": "edge_0004",
+        "from": "action_complete_seluv_is",
+        "to": "npc_seluv_is",
+        "relation": "affects",
+        "label": "动作影响实体",
+        "evidence": [
+          "xhe-001"
+        ]
+      },
+      {
+        "id": "edge_0005",
+        "from": "action_partner_ranni",
+        "to": "npc_ranni",
+        "relation": "affects",
+        "label": "动作影响实体",
+        "evidence": [
+          "xhe-004"
+        ]
+      },
+      {
+        "id": "edge_0006",
+        "from": "action_help_millicent",
+        "to": "npc_millicent",
+        "relation": "affects",
+        "label": "动作影响实体",
+        "evidence": [
+          "xhe-005"
+        ]
+      },
+      {
+        "id": "edge_0007",
+        "from": "action_help_millicent",
+        "to": "item_clean_golden_needle",
+        "relation": "affects",
+        "label": "动作影响实体",
+        "evidence": [
+          "xhe-005"
+        ]
+      },
+      {
+        "id": "edge_0008",
+        "from": "action_help_millicent",
+        "to": "item_miquella_needle",
+        "relation": "affects",
+        "label": "动作影响实体",
+        "evidence": [
+          "xhe-005"
+        ]
+      },
+      {
+        "id": "edge_0009",
+        "from": "action_kill_millicent",
+        "to": "npc_millicent",
+        "relation": "affects",
+        "label": "动作影响实体",
+        "evidence": [
+          "xhe-005"
+        ]
+      },
+      {
+        "id": "edge_0010",
+        "from": "action_give_twinned_set",
+        "to": "npc_fia",
+        "relation": "affects",
+        "label": "动作影响实体",
+        "evidence": [
+          "xhe-006"
+        ]
+      },
+      {
+        "id": "edge_0011",
+        "from": "action_give_twinned_set",
+        "to": "npc_d_brother",
+        "relation": "affects",
+        "label": "动作影响实体",
+        "evidence": [
+          "xhe-006"
+        ]
+      },
+      {
+        "id": "edge_0012",
+        "from": "action_give_twinned_set",
+        "to": "item_twinned_armor",
+        "relation": "affects",
+        "label": "动作影响实体",
+        "evidence": [
+          "xhe-006"
+        ]
+      },
+      {
+        "id": "edge_0013",
+        "from": "action_leave_fia",
+        "to": "npc_fia",
+        "relation": "affects",
+        "label": "动作影响实体",
+        "evidence": [
+          "xhe-006"
+        ]
+      },
+      {
+        "id": "edge_0014",
+        "from": "action_give_seluv_is_potion_to_jar",
+        "to": "npc_seluv_is",
+        "relation": "affects",
+        "label": "动作影响实体",
+        "evidence": [
+          "xhe-003"
+        ]
+      },
+      {
+        "id": "edge_0015",
+        "from": "action_give_amber_potion_to_ranni",
+        "to": "npc_ranni",
+        "relation": "affects",
+        "label": "动作影响实体",
+        "evidence": [
+          "xhe-002"
+        ]
+      },
+      {
+        "id": "edge_0016",
+        "from": "action_give_amber_potion_to_ranni",
+        "to": "item_amber_starlight",
+        "relation": "affects",
+        "label": "动作影响实体",
+        "evidence": [
+          "xhe-002"
+        ]
+      },
+      {
+        "id": "edge_0017",
+        "from": "action_help_millicent_final",
+        "to": "npc_millicent",
+        "relation": "affects",
+        "label": "动作影响实体",
+        "evidence": [
+          "xhe-005"
+        ]
+      },
+      {
+        "id": "edge_0018",
+        "from": "action_help_millicent_final",
+        "to": "item_miquella_needle",
+        "relation": "affects",
+        "label": "动作影响实体",
+        "evidence": [
+          "xhe-005"
+        ]
+      },
+      {
+        "id": "edge_0019",
+        "from": "action_kill_millicent_final",
+        "to": "npc_millicent",
+        "relation": "affects",
+        "label": "动作影响实体",
+        "evidence": [
+          "xhe-005"
+        ]
+      },
+      {
+        "id": "edge_0020",
+        "from": "quest_ranni_xhe",
+        "to": "xhe-004",
+        "relation": "supported_by",
+        "label": "任务由证据支持"
+      },
+      {
+        "id": "edge_0021",
+        "from": "quest_seluv_is_xhe",
+        "to": "xhe-001",
+        "relation": "supported_by",
+        "label": "任务由证据支持"
+      },
+      {
+        "id": "edge_0022",
+        "from": "quest_seluv_is_xhe",
+        "to": "xhe-002",
+        "relation": "supported_by",
+        "label": "任务由证据支持"
+      },
+      {
+        "id": "edge_0023",
+        "from": "quest_millicent_xhe",
+        "to": "xhe-005",
+        "relation": "supported_by",
+        "label": "任务由证据支持"
+      },
+      {
+        "id": "edge_0024",
+        "from": "quest_fia_d_xhe",
+        "to": "xhe-006",
+        "relation": "supported_by",
+        "label": "任务由证据支持"
+      },
+      {
+        "id": "edge_0025",
+        "from": "quest_seluv_is_potion_xhe",
+        "to": "xhe-003",
+        "relation": "supported_by",
+        "label": "任务由证据支持"
+      },
+      {
+        "id": "edge_0026",
+        "from": "quest_ranni_amber_xhe",
+        "to": "xhe-002",
+        "relation": "supported_by",
+        "label": "任务由证据支持"
+      },
+      {
+        "id": "edge_0027",
+        "from": "quest_millicent_choice_xhe",
+        "to": "xhe-005",
+        "relation": "supported_by",
+        "label": "任务由证据支持"
+      },
+      {
+        "id": "edge_0028",
+        "from": "npc_ranni",
+        "to": "xhe-001",
+        "relation": "supported_by",
+        "label": "实体由证据支持"
+      },
+      {
+        "id": "edge_0029",
+        "from": "npc_ranni",
+        "to": "xhe-002",
+        "relation": "supported_by",
+        "label": "实体由证据支持"
+      },
+      {
+        "id": "edge_0030",
+        "from": "npc_ranni",
+        "to": "xhe-004",
+        "relation": "supported_by",
+        "label": "实体由证据支持"
+      },
+      {
+        "id": "edge_0031",
+        "from": "npc_seluv_is",
+        "to": "xhe-001",
+        "relation": "supported_by",
+        "label": "实体由证据支持"
+      },
+      {
+        "id": "edge_0032",
+        "from": "npc_seluv_is",
+        "to": "xhe-003",
+        "relation": "supported_by",
+        "label": "实体由证据支持"
+      },
+      {
+        "id": "edge_0033",
+        "from": "npc_blaidd",
+        "to": "xhe-004",
+        "relation": "supported_by",
+        "label": "实体由证据支持"
+      },
+      {
+        "id": "edge_0034",
+        "from": "npc_millicent",
+        "to": "xhe-005",
+        "relation": "supported_by",
+        "label": "实体由证据支持"
+      },
+      {
+        "id": "edge_0035",
+        "from": "npc_fia",
+        "to": "xhe-006",
+        "relation": "supported_by",
+        "label": "实体由证据支持"
+      },
+      {
+        "id": "edge_0036",
+        "from": "npc_d",
+        "to": "xhe-006",
+        "relation": "supported_by",
+        "label": "实体由证据支持"
+      },
+      {
+        "id": "edge_0037",
+        "from": "npc_d_brother",
+        "to": "xhe-006",
+        "relation": "supported_by",
+        "label": "实体由证据支持"
+      },
+      {
+        "id": "edge_0038",
+        "from": "item_fingerslayer_blade",
+        "to": "xhe-001",
+        "relation": "supported_by",
+        "label": "实体由证据支持"
+      },
+      {
+        "id": "edge_0039",
+        "from": "item_amber_starlight",
+        "to": "xhe-002",
+        "relation": "supported_by",
+        "label": "实体由证据支持"
+      },
+      {
+        "id": "edge_0040",
+        "from": "item_clean_golden_needle",
+        "to": "xhe-005",
+        "relation": "supported_by",
+        "label": "实体由证据支持"
+      },
+      {
+        "id": "edge_0041",
+        "from": "item_miquella_needle",
+        "to": "xhe-005",
+        "relation": "supported_by",
+        "label": "实体由证据支持"
+      },
+      {
+        "id": "edge_0042",
+        "from": "item_twinned_armor",
+        "to": "xhe-006",
+        "relation": "supported_by",
+        "label": "实体由证据支持"
+      },
+      {
+        "id": "edge_0043",
+        "from": "xhe-001",
+        "to": "source-101",
+        "relation": "cites",
+        "label": "证据引用来源"
+      },
+      {
+        "id": "edge_0044",
+        "from": "xhe-002",
+        "to": "source-101",
+        "relation": "cites",
+        "label": "证据引用来源"
+      },
+      {
+        "id": "edge_0045",
+        "from": "xhe-003",
+        "to": "source-101",
+        "relation": "cites",
+        "label": "证据引用来源"
+      },
+      {
+        "id": "edge_0046",
+        "from": "xhe-004",
+        "to": "source-102",
+        "relation": "cites",
+        "label": "证据引用来源"
+      },
+      {
+        "id": "edge_0047",
+        "from": "xhe-005",
+        "to": "source-103",
+        "relation": "cites",
+        "label": "证据引用来源"
+      },
+      {
+        "id": "edge_0048",
+        "from": "xhe-006",
+        "to": "source-104",
+        "relation": "cites",
+        "label": "证据引用来源"
+      },
+      {
+        "id": "edge_0049",
+        "from": "action_give_fingerslayer_blade",
+        "to": "fingerslayer_blade_given",
+        "relation": "changes",
+        "label": "修改为 True",
+        "evidence": [
+          "xhe-001"
+        ]
+      },
+      {
+        "id": "edge_0050",
+        "from": "action_give_fingerslayer_blade",
+        "to": "seluv_is_alive",
+        "relation": "changes",
+        "label": "修改为 False",
+        "evidence": [
+          "xhe-001"
+        ]
+      },
+      {
+        "id": "edge_0051",
+        "from": "action_complete_seluv_is",
+        "to": "seluv_is_work_done",
+        "relation": "changes",
+        "label": "修改为 True",
+        "evidence": [
+          "xhe-001"
+        ]
+      },
+      {
+        "id": "edge_0052",
+        "from": "action_partner_ranni",
+        "to": "ranni_partnered",
+        "relation": "changes",
+        "label": "修改为 True",
+        "evidence": [
+          "xhe-004"
+        ]
+      },
+      {
+        "id": "edge_0053",
+        "from": "action_help_millicent",
+        "to": "miquella_needle_obtained",
+        "relation": "changes",
+        "label": "修改为 True",
+        "evidence": [
+          "xhe-005"
+        ]
+      },
+      {
+        "id": "edge_0054",
+        "from": "action_kill_millicent",
+        "to": "miquella_needle_obtained",
+        "relation": "changes",
+        "label": "修改为 False",
+        "evidence": [
+          "xhe-005"
+        ]
+      },
+      {
+        "id": "edge_0055",
+        "from": "action_give_twinned_set",
+        "to": "fia_alive",
+        "relation": "changes",
+        "label": "修改为 False",
+        "evidence": [
+          "xhe-006"
+        ]
+      },
+      {
+        "id": "edge_0056",
+        "from": "action_give_seluv_is_potion_to_jar",
+        "to": "seluv_is_potion_delivered_safely",
+        "relation": "changes",
+        "label": "修改为 True",
+        "evidence": [
+          "xhe-003"
+        ]
+      },
+      {
+        "id": "edge_0057",
+        "from": "action_give_amber_potion_to_ranni",
+        "to": "ranni_given_amber_potion",
+        "relation": "changes",
+        "label": "修改为 True",
+        "evidence": [
+          "xhe-002"
+        ]
+      },
+      {
+        "id": "edge_0058",
+        "from": "action_help_millicent_final",
+        "to": "millicent_helped",
+        "relation": "changes",
+        "label": "修改为 True",
+        "evidence": [
+          "xhe-005"
+        ]
+      },
+      {
+        "id": "edge_0059",
+        "from": "action_kill_millicent_final",
+        "to": "millicent_killed",
+        "relation": "changes",
+        "label": "修改为 True",
+        "evidence": [
+          "xhe-005"
+        ]
+      },
+      {
+        "id": "edge_0060",
+        "from": "quest_ranni_xhe",
+        "to": "transition_ranni_complete",
+        "relation": "has_transition",
+        "label": "包含状态转换",
+        "evidence": [
+          "xhe-004"
+        ]
+      },
+      {
+        "id": "edge_0061",
+        "from": "ranni_partnered",
+        "to": "transition_ranni_complete",
+        "relation": "requires",
+        "label": "条件 eq True",
+        "evidence": [
+          "xhe-004"
+        ]
+      },
+      {
+        "id": "edge_0062",
+        "from": "quest_seluv_is_xhe",
+        "to": "transition_seluv_is_complete",
+        "relation": "has_transition",
+        "label": "包含状态转换",
+        "evidence": [
+          "xhe-001"
+        ]
+      },
+      {
+        "id": "edge_0063",
+        "from": "seluv_is_alive",
+        "to": "transition_seluv_is_complete",
+        "relation": "requires",
+        "label": "条件 eq True",
+        "evidence": [
+          "xhe-001"
+        ]
+      },
+      {
+        "id": "edge_0064",
+        "from": "seluv_is_work_done",
+        "to": "transition_seluv_is_complete",
+        "relation": "requires",
+        "label": "条件 eq True",
+        "evidence": [
+          "xhe-001"
+        ]
+      },
+      {
+        "id": "edge_0065",
+        "from": "quest_seluv_is_xhe",
+        "to": "transition_ranni_kills_seluv_is",
+        "relation": "has_transition",
+        "label": "包含状态转换",
+        "evidence": [
+          "xhe-001"
+        ]
+      },
+      {
+        "id": "edge_0066",
+        "from": "fingerslayer_blade_given",
+        "to": "transition_ranni_kills_seluv_is",
+        "relation": "requires",
+        "label": "条件 eq True",
+        "evidence": [
+          "xhe-001"
+        ]
+      },
+      {
+        "id": "edge_0067",
+        "from": "quest_millicent_xhe",
+        "to": "transition_millicent_help_complete",
+        "relation": "has_transition",
+        "label": "包含状态转换",
+        "evidence": [
+          "xhe-005"
+        ]
+      },
+      {
+        "id": "edge_0068",
+        "from": "miquella_needle_obtained",
+        "to": "transition_millicent_help_complete",
+        "relation": "requires",
+        "label": "条件 eq True",
+        "evidence": [
+          "xhe-005"
+        ]
+      },
+      {
+        "id": "edge_0069",
+        "from": "quest_fia_d_xhe",
+        "to": "transition_fia_complete",
+        "relation": "has_transition",
+        "label": "包含状态转换",
+        "evidence": [
+          "xhe-006"
+        ]
+      },
+      {
+        "id": "edge_0070",
+        "from": "quest_seluv_is_potion_xhe",
+        "to": "transition_seluv_is_potion_safe",
+        "relation": "has_transition",
+        "label": "包含状态转换",
+        "evidence": [
+          "xhe-003"
+        ]
+      },
+      {
+        "id": "edge_0071",
+        "from": "seluv_is_potion_delivered_safely",
+        "to": "transition_seluv_is_potion_safe",
+        "relation": "requires",
+        "label": "条件 eq True",
+        "evidence": [
+          "xhe-003"
+        ]
+      },
+      {
+        "id": "edge_0072",
+        "from": "quest_seluv_is_potion_xhe",
+        "to": "transition_seluv_is_potion_failed",
+        "relation": "has_transition",
+        "label": "包含状态转换",
+        "evidence": [
+          "xhe-002"
+        ]
+      },
+      {
+        "id": "edge_0073",
+        "from": "ranni_given_amber_potion",
+        "to": "transition_seluv_is_potion_failed",
+        "relation": "requires",
+        "label": "条件 eq True",
+        "evidence": [
+          "xhe-002"
+        ]
+      },
+      {
+        "id": "edge_0074",
+        "from": "quest_ranni_amber_xhe",
+        "to": "transition_ranni_amber_safe",
+        "relation": "has_transition",
+        "label": "包含状态转换",
+        "evidence": [
+          "xhe-002"
+        ]
+      },
+      {
+        "id": "edge_0075",
+        "from": "ranni_given_amber_potion",
+        "to": "transition_ranni_amber_safe",
+        "relation": "requires",
+        "label": "条件 eq False",
+        "evidence": [
+          "xhe-002"
+        ]
+      },
+      {
+        "id": "edge_0076",
+        "from": "quest_ranni_amber_xhe",
+        "to": "transition_ranni_amber_failed",
+        "relation": "has_transition",
+        "label": "包含状态转换",
+        "evidence": [
+          "xhe-002"
+        ]
+      },
+      {
+        "id": "edge_0077",
+        "from": "ranni_given_amber_potion",
+        "to": "transition_ranni_amber_failed",
+        "relation": "requires",
+        "label": "条件 eq True",
+        "evidence": [
+          "xhe-002"
+        ]
+      },
+      {
+        "id": "edge_0078",
+        "from": "quest_millicent_choice_xhe",
+        "to": "transition_millicent_help",
+        "relation": "has_transition",
+        "label": "包含状态转换",
+        "evidence": [
+          "xhe-005"
+        ]
+      },
+      {
+        "id": "edge_0079",
+        "from": "millicent_helped",
+        "to": "transition_millicent_help",
+        "relation": "requires",
+        "label": "条件 eq True",
+        "evidence": [
+          "xhe-005"
+        ]
+      },
+      {
+        "id": "edge_0080",
+        "from": "quest_millicent_choice_xhe",
+        "to": "transition_millicent_kill",
+        "relation": "has_transition",
+        "label": "包含状态转换",
+        "evidence": [
+          "xhe-005"
+        ]
+      },
+      {
+        "id": "edge_0081",
+        "from": "millicent_killed",
+        "to": "transition_millicent_kill",
+        "relation": "requires",
+        "label": "条件 eq True",
+        "evidence": [
+          "xhe-005"
+        ]
+      },
+      {
+        "id": "edge_0082",
+        "from": "quest_ranni_xhe",
+        "to": "quest_seluv_is_xhe",
+        "relation": "interferes_with",
+        "label": "interferes_with",
+        "evidence": [
+          "xhe-001"
+        ]
+      },
+      {
+        "id": "edge_0083",
+        "from": "quest_millicent_xhe",
+        "to": "quest_millicent_xhe",
+        "relation": "unlocks",
+        "label": "unlocks",
+        "evidence": [
+          "xhe-005"
+        ]
+      },
+      {
+        "id": "edge_0084",
+        "from": "quest_ranni_xhe",
+        "to": "objective_ranni_complete",
+        "relation": "has_objective",
+        "label": "包含目标",
+        "evidence": [
+          "xhe-004"
+        ]
+      },
+      {
+        "id": "edge_0085",
+        "from": "quest_seluv_is_xhe",
+        "to": "objective_seluv_is_complete",
+        "relation": "has_objective",
+        "label": "包含目标",
+        "evidence": [
+          "xhe-001"
+        ]
+      },
+      {
+        "id": "edge_0086",
+        "from": "quest_millicent_xhe",
+        "to": "objective_millicent_needle",
+        "relation": "has_objective",
+        "label": "包含目标",
+        "evidence": [
+          "xhe-005"
+        ]
+      },
+      {
+        "id": "edge_0087",
+        "from": "quest_seluv_is_potion_xhe",
+        "to": "objective_seluv_is_potion_complete",
+        "relation": "has_objective",
+        "label": "包含目标",
+        "evidence": [
+          "xhe-003"
+        ]
+      },
+      {
+        "id": "edge_0088",
+        "from": "quest_millicent_choice_xhe",
+        "to": "objective_millicent_help",
+        "relation": "has_objective",
+        "label": "包含目标",
+        "evidence": [
+          "xhe-005"
+        ]
+      }
+    ]
+  },
+  "verification_targets": [
+    {
+      "target_id": "property_seluv_is_reachable",
+      "goal": "reachable",
+      "target": "quest_seluv_is_xhe"
+    },
+    {
+      "target_id": "property_ranni_complete",
+      "goal": "reachable",
+      "target": "quest_ranni_xhe"
+    },
+    {
+      "target_id": "property_seluv_is_interference",
+      "goal": "preserves_prerequisite",
+      "target": "quest_seluv_is_xhe"
+    },
+    {
+      "target_id": "property_millicent_alternative",
+      "goal": "has_alternative_path",
+      "target": "alternative_millicent_kill"
+    }
+  ]
+}
